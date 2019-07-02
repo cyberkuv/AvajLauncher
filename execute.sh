@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-java src.Simulator.Simulator scenario.txt
+
+java Avaj.AvajLauncher.Simulator.Simulator > scenario.txt

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Simulator {
+public class Simulation {
     private static WeatherTower weatherTower;
     private static List<Flyable> flyables = new ArrayList<Flyable>();
     public static void main(String args[]) throws InterruptedException{
@@ -46,7 +46,7 @@ public class Simulator {
         } catch(NumberFormatException e) {
             System.out.println("Simulation : Invalid Number entered" + e);
         } finally {
-//            FileWrite.getFileWrite().close();
+            FileWrite.getFileWrite().Close();
         }
     }
 }

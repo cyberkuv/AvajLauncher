@@ -10,7 +10,7 @@ public class Tower {
     private List<Flyable> landed = new ArrayList<>();
     public void register(Flyable flyable) {
         if(observers.contains(flyable))
-                return ;
+            return ;
         observers.add(flyable);
     }
     public void unregister(Flyable flyable) {  }
