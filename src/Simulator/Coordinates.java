@@ -18,10 +18,13 @@ public class Coordinates {
     public int getLongitude() {
         return this.longitude;
     }
+    public int setLongitude(int longitude) { this.longitude = longitude; return longitude; }
     public int getLatitude() {
         return this.latitude;
     }
+    public int setLatitude(int latitude) { this.latitude = latitude; return latitude; }
     public int getHeight() {
         return this.height;
     }
+    public int setHeight(int height) { this.height = height; return height; }
 }

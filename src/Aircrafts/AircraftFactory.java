@@ -13,7 +13,9 @@ public class AircraftFactory {
             return new JetPlane(name, coordinates);
         else if (strType.equals("Balloon"))
             return new Balloon(name, coordinates);
-        else
+        else {
             System.out.println("Aircraft : unknown type");
+            return null;
+        }
     }
 }
