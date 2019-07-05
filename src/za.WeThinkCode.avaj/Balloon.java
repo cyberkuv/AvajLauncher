@@ -1,25 +1,23 @@
-package Aircrafts;
+package AvajLauncher.src.za.WeThinkCode.avaj;
 
-import Simulator.Coordinates;
-import Simulator.FileWrite;
-import Simulator.Flyable;
-import Weather.WeatherTower;
+//import za.WeThinkCode.avaj.*;
+import AvajLauncher.src.za.WeThinkCode.avaj.*;
 
 public class Balloon extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
-    public Balloon(String name, Coordinates coordinates) { super(name,coordinates); }
+    Balloon(String name, Coordinates coordinates) { super(name,coordinates); }
     public void updateConditions() {
-        String weather = weatherTower.getWeather(this.coordinates);
+        String weather = this.weatherTower.getWeather(this.coordinates);
         switch (weather) {
             case "RAIN" : this.coordinates.setHeight(this.coordinates.getHeight() - 5);
                 FileWrite.getFileWrite().writeToFile("Balloon# " + this.name + "[" + this.id + ")" +
-                    " Man The rain messes up the balloon");
-                FileWrite.getFileWrite().writeToFile("Tower says : Balloon#" + this.name + "[" + this.id + "]" +
-                        " unregistered from weather tower.");
+                        " Man The rain messes up the balloon");
                 break ;
             case "SNOW" : this.coordinates.setHeight(this.coordinates.getHeight() - 15);
                 FileWrite.getFileWrite().writeToFile("Balloon#" + this.name + "[" + this.id + "]" +
                         " Damn! its freezing out here.");
+                FileWrite.getFileWrite().writeToFile("Tower says : Balloon#" + this.name + "[" + this.id + "]" +
+                        " unregistered from weather tower.");
                 break ;
             case "FOG" : this.coordinates.setHeight(this.coordinates.getHeight() - 2);
                 FileWrite.getFileWrite().writeToFile("Balloon#" + this.name + "[" + this.id + "]" +
@@ -37,12 +35,15 @@ public class Balloon extends Aircraft implements Flyable {
                         " : Weather Tower cannot be contacted right now!");
                 break ;
         }
+        if(this.coordinates.getHeight() <= 0)
+            FileWrite.getFileWrite().writeToFile("Balloon#" + this.name + "[" + this.id + "]" +
+                    " Hasn't taken off or rather just landed!");
 
     }
     public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
         FileWrite.getFileWrite().writeToFile("Tower says : Balloon#" + this.name
                 + "[" + this.id + "]" + " registered to weather tower.");
-        this.registerTower(weatherTower);
+        weatherTower.register(this);
     }
 }

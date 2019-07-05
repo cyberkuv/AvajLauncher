@@ -1,8 +1,6 @@
-package Simulator;
+package AvajLauncher.src.za.WeThinkCode.avaj;
 
-import Aircrafts.AircraftFactory;
-import Weather.WeatherTower;
-
+import AvajLauncher.src.za.WeThinkCode.avaj.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,10 +8,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Simulation {
+public class Simulator {
     private static WeatherTower weatherTower;
     private static List<Flyable> flyables = new ArrayList<Flyable>();
-    public static void main(String args[]) throws InterruptedException{
+    public static void main(String args[]) throws InterruptedException {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(args[0]));
             String line = reader.readLine();
@@ -22,7 +20,7 @@ public class Simulation {
                 weatherTower = new WeatherTower();
                 int simulation = Integer.parseInt(line.split(" ")[0]);
                 if(simulation < 0) {
-                    System.out.println("Simulation : Value must be a positive one");
+                    System.out.println("Simulator : Value must be a positive one");
                     System.exit(1);
                 }
                 while((line = reader.readLine()) != null) {
@@ -38,13 +36,15 @@ public class Simulation {
                     weatherTower.changeWeather();
             }
         } catch(FileNotFoundException e){
-            System.out.println("Simulation : " + e + "\n" + "Simulation : File Not Found " + args[0]);
+            System.out.println("Simulator : " + e + "\n" + "Simulator : File Not Found " + args[0]);
         } catch(IOException e) {
-            System.out.println("Simulation : " + e);
+            System.out.println("Simulator : " + e);
         } catch(ArrayIndexOutOfBoundsException e) {
-            System.out.println("Simulation : " + e);
+            System.out.println("Simulator : " + e);
         } catch(NumberFormatException e) {
-            System.out.println("Simulation : Invalid Number entered " + e);
+            System.out.println("Simulator : Invalid Number entered " + e);
+        } catch (NullPointerException e) {
+            System.out.println("Simulator : value is null" + e);
         } finally {
             FileWrite.getFileWrite().Close();
         }

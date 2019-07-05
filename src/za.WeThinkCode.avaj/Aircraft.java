@@ -1,17 +1,17 @@
-package Aircrafts;
+package AvajLauncher.src.za.WeThinkCode.avaj;
 
-import Simulator.Coordinates;
+import AvajLauncher.src.za.WeThinkCode.avaj.*;
 
 public class Aircraft {
-    protected long id;
+    protected Long id;
     protected String name;
     protected Coordinates coordinates;
-    private static long idCounter;
-    private long nextId() { return idCounter++; }
+    private static Long idCounter = 0L;
+    private long nextId() { return ++idCounter; }
     public Coordinates getCoordinates() { return this.coordinates; }
     protected Aircraft(String airName, Coordinates coordinates){
         this.name = airName;
         this.coordinates = coordinates;
-        this.id = nextId();
+        this.id = this.nextId();
     }
 }

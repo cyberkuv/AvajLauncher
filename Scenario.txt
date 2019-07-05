@@ -1,2 +1,2 @@
-5
-JetPlane J2 2 3 20
+1
+JetPlane J2 1 1 1

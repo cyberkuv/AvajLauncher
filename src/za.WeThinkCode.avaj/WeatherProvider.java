@@ -1,7 +1,6 @@
-package Weather;
+package AvajLauncher.src.za.WeThinkCode.avaj;
 
-import Simulator.Coordinates;
-
+import AvajLauncher.src.za.WeThinkCode.avaj.*;
 import java.util.Random;
 
 public class WeatherProvider {
@@ -13,6 +12,7 @@ public class WeatherProvider {
             weatherProvider = new WeatherProvider();
         return weatherProvider;
     }
+    //Not really viable or used
     public String getCurrentWeather(Coordinates coordinates) {
         Random random = new Random();
         int r = random.nextInt(4);

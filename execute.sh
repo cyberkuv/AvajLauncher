@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-java Simulation Scenario.txt
+java AvajLauncher.src.za.WeThinkCode.avaj.Simulator.class Scenario.txt

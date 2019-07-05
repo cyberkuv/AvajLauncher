@@ -1,4 +1,6 @@
-package Simulator;
+package AvajLauncher.src.za.WeThinkCode.avaj;
+
+import AvajLauncher.src.za.WeThinkCode.avaj.*;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,7 +17,7 @@ public class FileWrite {
         if(fileWrite == null)
             try {
                 fileWrite = new FileWrite();
-                file = new File("Simulation.txt");
+                file = new File("Simulator.txt");
                 fileWriter = new FileWriter(file);
                 bufferedWriter = new BufferedWriter(fileWriter);
             } catch (IOException e) {
@@ -37,7 +39,7 @@ public class FileWrite {
             if(bufferedWriter != null)
                 bufferedWriter.close();
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("FileWrite : error writting " + e);
         }
     }
 }

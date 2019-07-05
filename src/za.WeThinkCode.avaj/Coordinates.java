@@ -1,4 +1,6 @@
-package Simulator;
+package AvajLauncher.src.za.WeThinkCode.avaj;
+
+import AvajLauncher.src.za.WeThinkCode.avaj.*;
 
 public class Coordinates {
     private int longitude;
@@ -15,9 +17,7 @@ public class Coordinates {
 //        else if (height < 0)
 //            System.out.println("Coordinates : Takeoff impossible at such height");
     }
-    public int getLongitude() {
-        return this.longitude;
-    }
+    public int getLongitude() { return this.longitude; }
     public void setLongitude(int longitude) { this.longitude = longitude; }
     public int getLatitude() {
         return this.latitude;

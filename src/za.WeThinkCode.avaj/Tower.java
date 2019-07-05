@@ -1,13 +1,13 @@
-package Weather;
+package AvajLauncher.src.za.WeThinkCode.avaj;
 
-import Simulator.Flyable;
+import AvajLauncher.src.za.WeThinkCode.avaj.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Tower {
-    private List<Flyable> observers = new ArrayList<>();
-    private List<Flyable> landed = new ArrayList<>();
+    private List<Flyable> observers = new ArrayList<Flyable>();
+    private List<Flyable> landed = new ArrayList<Flyable>();
     public void register(Flyable flyable) {
         if(observers.contains(flyable))
             return ;
