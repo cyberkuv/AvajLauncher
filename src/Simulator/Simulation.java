@@ -38,13 +38,13 @@ public class Simulation {
                     weatherTower.changeWeather();
             }
         } catch(FileNotFoundException e){
-            System.out.println("Simulation : " + e + "\n" + "File Not Found" + args[0]);
+            System.out.println("Simulation : " + e + "\n" + "Simulation : File Not Found " + args[0]);
         } catch(IOException e) {
             System.out.println("Simulation : " + e);
         } catch(ArrayIndexOutOfBoundsException e) {
             System.out.println("Simulation : " + e);
         } catch(NumberFormatException e) {
-            System.out.println("Simulation : Invalid Number entered" + e);
+            System.out.println("Simulation : Invalid Number entered " + e);
         } finally {
             FileWrite.getFileWrite().Close();
         }

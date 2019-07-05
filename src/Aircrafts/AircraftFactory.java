@@ -11,8 +11,8 @@ public class AircraftFactory {
             return new Helicopter(name, coordinates);
         else if (strType.equals("JetPlane"))
             return new JetPlane(name, coordinates);
-        else if (strType.equals("Balloon"))
-            return new Balloon(name, coordinates);
+//        else if (strType.equals("Balloon"))
+//            return new Balloon(name, coordinates);
         else {
             System.out.println("Aircraft : unknown type");
             return null;

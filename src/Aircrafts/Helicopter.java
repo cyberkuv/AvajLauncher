@@ -7,7 +7,7 @@ import Weather.WeatherTower;
 
 public class Helicopter extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
-    public Helicopter(String name, Coordinates coordinates){ super(name, coordinates); }
+    Helicopter(String name, Coordinates coordinates){ super(name, coordinates); }
     public void updateConditions() {
         String weather = weatherTower.getWeather(this.coordinates);
         switch (weather) {

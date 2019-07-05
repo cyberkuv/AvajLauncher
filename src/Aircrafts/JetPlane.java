@@ -23,7 +23,8 @@ public class JetPlane extends Aircraft implements Flyable {
                 FileWrite.getFileWrite().writeToFile("JetPlane#" + this.name + "[" + this.id + "]" +
                         " Damn! so foggy.");
                 break ;
-            case "SUN" : this.coordinates.setHeight(this.coordinates.getHeight() - 20);
+            case "SUN" :
+                this.coordinates.setHeight(this.coordinates.getHeight() - 20);
                 FileWrite.getFileWrite().writeToFile("JetPlane#" + this.name + "[" + this.id + "]" +
                         " This is hot.");
                 break ;

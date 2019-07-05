@@ -7,7 +7,7 @@ import java.util.Random;
 public class WeatherProvider {
     private static WeatherProvider weatherProvider = null;
     private static  String[] weather = { "RAIN", "SNOW", "FOG", "SUN" };
-    private void weatherProvider() {}
+    private WeatherProvider() {}
     public static WeatherProvider getProvider() {
         if(weatherProvider == null)
             weatherProvider = new WeatherProvider();
